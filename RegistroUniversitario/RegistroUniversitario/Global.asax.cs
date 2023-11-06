@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.Optimization;
 using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
 using System.Web.Http;
 using Newtonsoft.Json;
 
@@ -16,6 +11,7 @@ namespace RegistroUniversitario
         void Application_Start(object sender, EventArgs e)
         {
 
+            
 
             HttpConfiguration configuration = GlobalConfiguration.Configuration;
 
@@ -30,8 +26,11 @@ namespace RegistroUniversitario
             configuration.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
             RegisterRoutes(RouteTable.Routes);
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.TypeNameHandling = Newtonsoft.Json.TypeNameHandling.None;
+            
 
-           
+
         }
 
         void RegisterRoutes(RouteCollection routes)

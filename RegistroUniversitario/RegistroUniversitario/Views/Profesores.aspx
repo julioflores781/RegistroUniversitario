@@ -6,6 +6,8 @@
     <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/23.1.6/css/dx.light.css" />
     <script src="https://cdn3.devexpress.com/jslib/23.1.6/js/dx.all.js"></script>
+    <script src="https://unpkg.com/devextreme-aspnet-data@2.9.2/js/dx.aspnet.data.js"></script>
+
 
 
     <div class="demo-container">
@@ -18,13 +20,44 @@
     <script>
 
 
-        const employees = [{}];
 
-        const states = [{}];
         $(() => {
+
+            const URL = '/api/Profesores';
+
+            const srv_profesores = new DevExpress.data.CustomStore({
+                key: 'id',
+                load() {
+                    return sendRequest(`${URL}/Obtener`);
+                },
+                insert(values) {
+                    return sendRequest(`${URL}/InsertOrder`, 'POST', {
+                        values: JSON.stringify(values),
+                    });
+                },
+                update(key, values) {
+                    return sendRequest(`${URL}/UpdateOrder`, 'PUT', {
+                        key,
+                        values: JSON.stringify(values),
+                    });
+                },
+                remove(key) {
+                    return sendRequest(`${URL}/DeleteOrder`, 'DELETE', {
+                        key,
+                    });
+                },
+            });
+
+
+
             $('#gridContainer').dxDataGrid({
-                dataSource: employees,
-                keyExpr: 'ID',
+                dataSource: DevExpress.data.AspNet.createStore({
+                    key: 'id',
+                    loadUrl: URL + '/Obtener'
+                    , updateUrl: URL + '/Actualizar'
+                    , insertUrl: URL + '/Insertar'
+                    , deleteUrl: URL + '/Eliminar'
+                }),
                 showBorders: true,
                 editing: {
                     mode: 'popup',
@@ -32,7 +65,7 @@
                     allowAdding: true,
                     allowDeleting: true,
                     popup: {
-                        title: 'Employee Info',
+                        title: 'Profesor Info',
                         showTitle: true,
                         width: 700,
                         height: 525,
@@ -42,61 +75,27 @@
                             itemType: 'group',
                             colCount: 2,
                             colSpan: 2,
-                            items: ['FirstName', 'LastName', 'Prefix', 'BirthDate', 'Position', 'HireDate', {
-                                dataField: 'Notes',
-                                editorType: 'dxTextArea',
-                                colSpan: 2,
-                                editorOptions: {
-                                    height: 100,
-                                },
-                            }],
-                        }, {
-                            itemType: 'group',
-                            colCount: 2,
-                            colSpan: 2,
-                            caption: 'Home Address',
-                            items: ['StateID', 'Address'],
+                            items: ['nombre', 'apellido', 'correo_electronico', 'numero_telefono']
                         }],
                     },
                 },
                 columns: [
-                  {
-                      dataField: 'Prefix',
-                      caption: 'Title',
-                      width: 70,
-                  },
-                  'FirstName',
-                  'LastName',
-                  {
-                      dataField: 'BirthDate',
-                      dataType: 'date',
-                  },
-                  {
-                      dataField: 'Position',
-                      width: 170,
-                  },
-                  {
-                      dataField: 'HireDate',
-                      dataType: 'date',
-                  },
-                  {
-                      dataField: 'StateID',
-                      caption: 'State',
-                      width: 125,
-                      lookup: {
-                          dataSource: states,
-                          displayExpr: 'Name',
-                          valueExpr: 'ID',
-                      },
-                  },
-                  {
-                      dataField: 'Address',
-                      visible: false,
-                  },
-                  {
-                      dataField: 'Notes',
-                      visible: false,
-                  },
+
+                    {
+                        dataField: 'nombre'
+                    },
+
+                    {
+                        dataField: 'apellido'
+
+                    },
+                    {
+                        dataField: 'correo_electronico'
+                    },
+                    {
+                        dataField: 'numero_telefono'
+                    }
+
                 ],
             });
         });

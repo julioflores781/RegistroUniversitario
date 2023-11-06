@@ -7,6 +7,8 @@
     <script src="https://cdn3.devexpress.com/jslib/23.1.6/js/dx.all.js"></script>
     <script src="https://unpkg.com/devextreme-aspnet-data@2.9.2/js/dx.aspnet.data.js"></script>
 
+
+
     <div class="demo-container">
         <div id="data-grid-demo">
             <div id="gridContainer"></div>

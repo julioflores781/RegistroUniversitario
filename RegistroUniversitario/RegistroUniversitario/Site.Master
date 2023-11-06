@@ -51,9 +51,11 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Inicio</a></li>
                         <li><a runat="server" href="~/Views/Estudiantes.aspx">Estudiantes</a></li>
-                        <li><a runat="server" href="~/Contact.aspx">Profesores</a></li>
-                        <li><a runat="server" href="~/Contact.aspx">Materias</a></li>
-                         <li><a runat="server" href="~/Views/Calificaciones.aspx">Calificaciones</a></li>
+                        <li><a runat="server" href="~/Views/Profesores.aspx">Profesores</a></li>
+                        <li><a runat="server" href="~/Views/Materias.aspx">Materias</a></li>
+                        <li><a runat="server" href="~/Views/Calificaciones.aspx">Calificaciones</a></li>
+                        <li><a runat="server" href="~/Views/HorariosMaterias.aspx">HorariosMaterias</a></li>
+                        <li><a runat="server" href="~/Views/Inscripciones.aspx">Inscripciones</a></li>
                     </ul>
                 </div>
             </div>
