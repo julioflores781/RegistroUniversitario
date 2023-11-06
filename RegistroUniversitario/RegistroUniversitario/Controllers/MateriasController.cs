@@ -3,8 +3,6 @@ using Datos;
 using DevExtreme.AspNet.Mvc;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -64,16 +62,16 @@ namespace RegistroUniversitario.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage ObtenerPorId()
+        public HttpResponseMessage ObtenerPorId(int id)
         {
             try
             {
                 registro_universitarioEntities context = new registro_universitarioEntities();
                 Ctrl_Materias _ctrl = new Ctrl_Materias(context);
 
-                List<materias> resultado = _ctrl.Obtener();
+                materias d = _ctrl.ObtenerPorId(id);
 
-                var result = resultado.Select(d => new
+                var result =  new
                 {
                     d.id,
                     d.nombre_materia,
@@ -81,7 +79,7 @@ namespace RegistroUniversitario.Controllers
                     d.codigo_curso,
                     d.creditos,
 
-                });
+                };
 
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }

@@ -34,7 +34,8 @@ namespace Datos
         public virtual DbSet<inscripciones> inscripciones { get; set; }
         public virtual DbSet<materias> materias { get; set; }
         public virtual DbSet<profesores> profesores { get; set; }
-    
+        public object ReporteEstudiantesMateriasHorarios_Result { get; set; }
+
         public virtual ObjectResult<ConsultarCalificaciones_Result> ConsultarCalificaciones()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ConsultarCalificaciones_Result>("ConsultarCalificaciones");

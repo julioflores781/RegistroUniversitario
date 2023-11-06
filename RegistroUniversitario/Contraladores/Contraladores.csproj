@@ -85,6 +85,7 @@
     <Compile Include="Ctrl_Inscripciones.cs" />
     <Compile Include="Ctrl_Materias.cs" />
     <Compile Include="Ctrl_Profesores.cs" />
+    <Compile Include="Ctrl_ReporteEstudiantesMaterias.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

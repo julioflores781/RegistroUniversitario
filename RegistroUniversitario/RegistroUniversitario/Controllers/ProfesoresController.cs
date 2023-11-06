@@ -3,8 +3,6 @@ using Datos;
 using DevExtreme.AspNet.Mvc;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -59,16 +57,16 @@ namespace RegistroUniversitario.Controllers
 
 
         [HttpGet]
-        public HttpResponseMessage ObtenerPorId()
+        public HttpResponseMessage ObtenerPorId(int id)
         {
             try
             {
                 registro_universitarioEntities context = new registro_universitarioEntities();
                 Ctrl_Profesores _ctrl = new Ctrl_Profesores(context);
 
-                List<profesores> resultado = _ctrl.Obtener();
+                profesores d = _ctrl.ObtenerPorId( id);
 
-                var result = resultado.Select(d => new ProfesorViewModel
+                var result =  new ProfesorViewModel
                 {
                     Id = d.id,
                     Nombre = d.nombre,
@@ -76,7 +74,7 @@ namespace RegistroUniversitario.Controllers
                     Correo_Electronico = d.correo_electronico,
                     Numero_telefono = d.numero_telefono
                     // Mapea otras propiedades aquí
-                });
+                };
 
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }

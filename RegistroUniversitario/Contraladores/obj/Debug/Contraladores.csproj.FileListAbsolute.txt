@@ -16,15 +16,12 @@ C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\Contraladores.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\Contraladores.pdb
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\Datos.dll
-C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\DevExtreme.AspNet.Data.dll
-C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\DevExtreme.AspNet.Mvc.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\EntityFramework.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\EntityFramework.SqlServer.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\Newtonsoft.Json.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\System.Net.Http.Formatting.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\System.Web.Http.dll
-C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\System.Web.Http.WebHost.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\WebActivatorEx.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\Datos.pdb
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Contraladores\bin\Debug\Datos.dll.config

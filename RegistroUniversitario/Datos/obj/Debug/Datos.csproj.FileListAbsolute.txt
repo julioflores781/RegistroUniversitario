@@ -16,7 +16,6 @@ C:\workspace\RegistroUniversitario\RegistroUniversitario\Datos\bin\Debug\Microso
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Datos\bin\Debug\Newtonsoft.Json.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Datos\bin\Debug\System.Net.Http.Formatting.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Datos\bin\Debug\System.Web.Http.dll
-C:\workspace\RegistroUniversitario\RegistroUniversitario\Datos\bin\Debug\System.Web.Http.WebHost.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Datos\bin\Debug\WebActivatorEx.dll
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Datos\bin\Debug\EntityFramework.xml
 C:\workspace\RegistroUniversitario\RegistroUniversitario\Datos\bin\Debug\EntityFramework.SqlServer.xml

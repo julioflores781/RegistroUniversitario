@@ -3,8 +3,6 @@ using Datos;
 using DevExtreme.AspNet.Mvc;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -56,46 +54,18 @@ namespace RegistroUniversitario.Controllers
             }
         }
 
-        //[HttpGet]
-        //public HttpResponseMessage Obtener()
-        //{
-        //    try
-        //    {
-        //        registro_universitarioEntities context = new registro_universitarioEntities();
-
-        //        Ctrl_Calificaciones _ctrl = new Ctrl_Calificaciones(context);
-
-        //        List<calificaciones> resultado = _ctrl.Obtener();
-
-        //        var result = resultado.Select(d => new
-        //        {
-        //            d.id_estudiante,
-        //            d.fecha_calificacion,
-        //            d.id,
-        //            d.id_materia,
-        //            d.puntuacion,
-
-        //        });
-
-        //        return Request.CreateResponse(HttpStatusCode.OK, result);
-        //    }
-        //    catch (Exception excepcion)
-        //    {
-        //        return Request.CreateResponse(HttpStatusCode.Unauthorized, excepcion.Message);
-        //    }
-        //}
 
         [HttpGet]
-        public HttpResponseMessage ObtenerPorId()
+        public HttpResponseMessage ObtenerPorId(int id)
         {
             try
             {
                 registro_universitarioEntities context = new registro_universitarioEntities();
                 Ctrl_Calificaciones _ctrl = new Ctrl_Calificaciones(context);
 
-                List<calificaciones> resultado = _ctrl.Obtener();
+                calificaciones d = _ctrl.ObtenerPorId(id);
 
-                var result = resultado.Select(d => new
+                var result =  new
                 {
                     d.id_estudiante,
                     d.fecha_calificacion,
@@ -103,7 +73,7 @@ namespace RegistroUniversitario.Controllers
                     d.id_materia,
                     d.puntuacion,
 
-                });
+                };
 
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }

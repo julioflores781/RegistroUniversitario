@@ -74,7 +74,7 @@
                             itemType: 'group',
                             colCount: 2,
                             colSpan: 2,
-                            items: ['nombre_materia', 'descripcion', 'codigo_curso', 'creditos', 'id_profesor']
+                            items: ['nombre_materia', 'descripcion', 'codigo_curso', 'creditos', 'ID_Profesor']
                         }],
                     },
                 },

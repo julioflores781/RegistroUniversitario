@@ -3,8 +3,6 @@ using Datos;
 using DevExtreme.AspNet.Mvc;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -55,16 +53,16 @@ namespace RegistroUniversitario.Controllers
 
 
         [HttpGet]
-        public HttpResponseMessage ObtenerPorId()
+        public HttpResponseMessage ObtenerPorId(int id)
         {
             try
             {
                 registro_universitarioEntities context = new registro_universitarioEntities();
                 Ctrl_Inscripciones _ctrl = new Ctrl_Inscripciones(context);
 
-                List<inscripciones> resultado = _ctrl.Obtener();
+                inscripciones d = _ctrl.ObtenerPorId(id);
 
-                var result = resultado.Select(d => new
+                var result = new
                 {
                     d.id,
                     d.id_estudiante,
@@ -72,7 +70,7 @@ namespace RegistroUniversitario.Controllers
                     d.fecha_inscripcion,
                     d.estado,
 
-                });
+                };
 
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }
